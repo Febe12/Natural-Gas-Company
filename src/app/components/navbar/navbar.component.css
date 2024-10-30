@@ -1,0 +1,44 @@
+
+
+
+
+
+span{
+
+
+position:absolute;
+top:12%;
+right:3%;
+padding: 1px;
+
+
+
+
+
+
+}
+.icon{
+
+    font-size: 50px;
+     text-align: center;
+    color: #326d75;
+   
+   
+  
+    
+    
+}
+
+a{
+    color: #326d75;
+}
+a:hover{
+
+    color: #72a7ac;
+     text-shadow: 2px 2px 20px #003136;
+}
+h6{
+
+    margin-top: 3%;
+    font-weight: 700px;
+}

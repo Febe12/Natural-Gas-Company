@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+
+
+    <div class="container" style="margin-top: 70px;">
+  
+        <div class="icon">
+          <i class="fas fa-exclamation"></i>
+          <img class="img-responsive" src="https://th.bing.com/th/id/OIP.ZB2rftHBUfS_2nQtPFET1QHaHa?rs=1&pid=ImgDetMain"
+          width="90" height="90" >
+          <p class="warn">PETROTROD GAS COMPANY ............!</p>
+          <h2 class="gas">Notifications </h2>
+        </div>
+        </div>
+      
+        <br>
+        <div class="row" style="margin-left: 9%;margin-right: 5%;">
+       
+          
+          <div class="col-md-3" style="border-width: 3%;border-color: azure;border-style: solid;background-color: #326d75;padding:20px;">user name</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;background-color: #326d75;padding:20px;">feedback name</div>
+          
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;background-color: #326d75;padding:20px;">service name</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;background-color: #326d75;padding:20px;">created Date</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;background-color: #326d75;padding:20px;">delete</div>
+     
+      </div>
+        <div class="row" *ngFor="let war of allwarning" style="margin-left:9%;margin-right: 5%;">
+          
+
+          <div class="col-md-3" style="border-width: 3%;border-color: azure;border-style: solid;;padding:20px;">{{war.first_name}} {{war.last_name}}</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;padding:20px;">{{ war.feedback_name}}</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;padding:20px;">{{war.services_name}}</div>
+          
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;padding:20px;">{{war.feedback_date}}</div>
+          <div class="col-md-2" style="border-width: 3%;border-color: azure;border-style: solid;padding:20px;">     
+            <button (click)=" deletenotification(war.feedback_name)" 
+            style=
+            "color: red;padding: 0;
+            border: none;
+            background: none;"> <i class="fa-solid fa-trash-can delete"></i> 
+            </button>
+            
+        
+         </div>
+     
+           
+    </div>

@@ -1,0 +1,221 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css2">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<div class="container">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onsign()" style="margin-top: 5%;color: #326d75;">
+    <legend>Registration For New Users </legend>
+
+  <!--userName  -->
+  <div class="form-group">
+    <label for="userName" class="col-sm-3 control-label">UserName </label>
+    <div class="col-sm-9">
+      <input type="text" id="userName" placeholder="userName" class="form-control" formControlName="userName">
+    </div>
+  </div>
+
+  <!-- userEmail -->
+  <div class="form-group">
+    <label for="email" class="col-sm-3 control-label">Email </label>
+    <div class="col-sm-9">
+      <input type="email" id="email" placeholder="Email" class="form-control" name="email"
+      formControlName="email">
+      <small *ngIf="form.controls['email'].dirty && form.hasError('required','email')" class="text-danger">*Email is required</small>
+    </div>
+  </div>
+
+
+    <!--password  -->
+    <div class="form-group">
+      <label for="password" class="col-sm-3 control-label">Password</label>
+      <div class="col-sm-9">
+        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password">
+        
+      </div>
+      <small *ngIf="form.controls['password'].dirty && form.hasError('required','password')" class="text-danger">*Password is required</small>
+    </div>
+
+
+    <!--first_name  -->
+    <div class="form-group">
+      <label for="firstName" class="col-sm-3 control-label">First Name</label>
+      <div class="col-sm-9">
+        <input type="text" id="firstName" placeholder="First Name" class="form-control" formControlName="firstName">
+      </div>
+    </div>
+    <!-- last_name -->
+    <div class="form-group">
+      <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+      <div class="col-sm-9">
+        <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus
+        formControlName="lastName">
+      </div>
+    </div>
+
+
+
+<!--national id -->
+<div class="form-group">
+  <label for="nationalID" class="col-sm-3 control-label">National ID</label>
+  <div class="col-sm-9">
+    <input type="text" id="nationalID" placeholder=" Enter User National ID" class="form-control" formControlName="nationalID">
+  </div>
+</div>
+
+<!-- gender -->
+<div class="form-group">
+  <label class="control-label col-sm-3">Gender</label>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-4">
+        <label class="radio-inline">
+          <input type="radio" name="gender" value="male" formControlName="gender"> Male </label>
+      </div>
+      <div class="col-sm-4">
+        <label class="radio-inline">
+          <input type="radio" name="gender" value="Female" formControlName="gender"> Female </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--material status-->
+<fieldset>
+  <legend>Material Status </legend>
+
+  <div>
+    <input type="radio" id="Single" name="maritalState" value="Single" formControlName="maritalState">Single
+  </div>
+
+  <div>
+    <input type="radio" id="Married" name="maritalState" value="Married" formControlName="maritalState">Married
+  </div>
+
+  <div>
+    <input type="radio" id="Widowed" name="maritalState" value="Widowed" formControlName="maritalState">Widowed
+  </div>
+
+  <div>
+    <input type="radio" id="Separated" name="maritalState" value="Separated"
+    formControlName="maritalState">Separated
+  </div>
+
+  <div>
+    <input type="radio" id="Divorced" name="maritalState" value="Divorced" formControlName="maritalState">Divorced
+  </div>
+</fieldset>
+
+
+<!-- userPhone1 -->
+    <div class="form-group">
+      <label for="phoneNumber" class="col-sm-3 control-label">*Phone Number</label>
+      <div class="col-sm-9">
+        <input type="phoneNumber" id="phoneNumber" placeholder="Phone Number" class="form-control"
+        formControlName="phoneNumber">
+        <span class="help-block"> Phone Number for User Is Very Important </span>
+      </div>
+    </div>
+
+<!-- userPhone2 -->
+    <div class="form-group">
+      <label for="phoneNumber2" class="col-sm-3 control-label"> *Other Number </label>
+      <div class="col-sm-9">
+        <input type="phoneNumber2" id="phoneNumber2" placeholder="Other Number" class="form-control"
+        formControlName="phoneNumber2">
+        <span class="help-block"> Phone Number for User Is Very Important </span>
+      </div>
+    </div>
+
+
+<!--addressCity  -->
+    <div class="form-group">
+      <label for="addressCity" class="col-sm-3 control-label">*Address City </label>
+      <div class="col-sm-9">
+        <input type="text" id="addressCity" placeholder="Enter User City" class="form-control" name="addressCity"
+        formControlName="addressCity">
+      </div>
+    </div>
+<!-- addresssRegion -->
+    <div class="form-group">
+      <label for="addressRegion" class="col-sm-3 control-label">*Address Region </label>
+      <div class="col-sm-9">
+        <input type="text" id="addressRegion" placeholder="Enter User Region" class="form-control" name="addressRegion"
+        formControlName="addressRegion">
+      </div>
+    </div>
+<!-- addressStreet -->
+    <div class="form-group">
+      <label for="addressStreet" class="col-sm-3 control-label">*Address Street </label>
+      <div class="col-sm-9">
+        <input type="text" id="addressStreet" placeholder="Enter User Street" class="form-control" name="addressStreet"
+        formControlName="addressStreet">
+      </div>
+    </div>
+
+
+ <!-- userFlameSensor -->
+ <div class="form-group">
+  <label for="flameSensor" class="col-sm-3 control-label">* UserFlameSensor </label>
+  <div class="col-sm-9">
+    <input type="text" id="flameSensor" placeholder="userFlameSensor" class="form-control"
+    formControlName="flameSensor">
+  </div>
+</div>
+
+<!--  userGasSensor-->
+<div class="form-group">
+  <label for="gasSensor" class="col-sm-3 control-label">*UserGasSensor</label>
+  <div class="col-sm-9">
+    <input type="number" id="gasSensor" placeholder="userGasSensor" class="form-control"
+    formControlName="gasSensor">
+  </div>
+</div>
+
+
+    <!-- role name
+    <div class="form-group">
+      <label for="roleName" class="col-sm-3 control-label"> roleName</label>
+      <div class="col-sm-9">
+        <input type="text" id="roleName" placeholder="roleName" class="form-control" formControlName="roleName">      </div>
+
+    </div>
+ -->
+
+
+<!--BranchId  -->
+<div class="form-group">
+  <label for="branchId" class="col-sm-3 control-label"> BranchId</label>
+  <div class="col-sm-9">
+    <input type="number" id="branchId" placeholder="branchId" class="form-control" formControlName="branchId">      </div>
+
+</div>
+
+    <!-- /.form-group -->
+
+
+
+    <div class="form-group">
+      <div class="col-sm-9 ">
+        <span class="help-block">*Required Fields</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-block"
+    style="color: #326d75;" (click)="onSubmit" > Register </button>
+    
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+  </form>
+   <!-- /form -->
+   <br>
+   <br>
+    <button class="cancel" routerLink="/start">
+     cancel
+    </button>
+
+</div> <!-- ./container -->

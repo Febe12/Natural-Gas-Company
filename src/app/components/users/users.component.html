@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<app-navbar></app-navbar>
+<div class="form-outline mt-3">
+    <i class="fa-solid fa-magnifying-glass" style="margin-left: 2%;margin-top: 10px;color: #326d75;"></i>
+    <input type="search"[(ngModel)]="searchtext"class="form-control"placeholder="search"aria-label="search">
+</div>
+
+
+<div class="container-fluid" class="all" >
+
+
+
+<br>
+
+
+<div class="row" >
+    <div class="col-md-4" *ngFor="let use of users|filter:searchtext"  class="itemstyle">
+       <div class="iconstyle">
+        <img src="data:image/png;base64,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" alt="">
+    
+       </div>
+<div class="row">
+
+<div class="col-md-8">
+
+    <h5 class="name"> NAME : {{use.first_name }} {{use.last_name}} </h5> 
+    <hr > 
+    <div class="row" style="margin-left: 12%;margin-bottom:2%;">
+
+        <div class="col-md-1" style="width:15%;"><button  [routerLink]="['/userdetails',use.n_users_id]" ><i class="fa-solid fa-circle-info info"></i>  info </button></div>
+       
+        <div class="col-md-1"style="width: 15%;">
+            <button  [routerLink]="['/bills',use.n_users_id]" > <i class="fa-solid fa-file-invoice bill"></i> bill </button>
+               </div>
+
+               <div class="col-md-1" style="width: 15%;"><button   [routerLink]="['/dashboard',use.n_users_id]"> <i class="fa-solid fa-chart-line dash" ></i> dash</button>
+               </div>
+
+        <div class="col-md-1" style="width: 15%;"> 
+            <button  (click)=" deleteUser(use.n_users_id)"> <i class="fa-solid fa-trash-can delete"></i> delete</button>
+            </div>
+    </div>
+    
+</div>
+
+
+</div>
+ 
+
+<!-- <img src="" class="img-fluid">  -->
+
+
+
+
+<!--   
+<div  class="buttonstyle">
+<button class="butn" [routerLink]="['/userdetails',use.n_users_id]" ><i class="fa-solid fa-circle-info info"></i>  info </button>
+
+<button  class="butn" [routerLink]="['/dashboard',use.n_users_id]"> <i class="fa-solid fa-chart-line dash" ></i> dash</button>
+
+<button class="butn" [routerLink]="['/bills',use.n_users_id]" > <i class="fa-solid fa-file-invoice bill"></i> bill </button>
+   
+    
+    <button  > <i class="fa-solid fa-trash-can delete"></i> delete</button>
+    
+
+
+
+</div>-->
+
+
+</div>
+</div>
